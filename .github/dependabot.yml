@@ -5,21 +5,39 @@
 
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-    time: '08:00'
-  open-pull-requests-limit: 10
-- package-ecosystem: bundler
-  directory: "/"
-  schedule:
-    interval: daily
-    time: '08:00'
-  open-pull-requests-limit: 10
-- package-ecosystem: gomod
-  directory: /
-  schedule:
-    interval: daily
-    time: '08:00'
-  open-pull-requests-limit: 10
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "[github-actions] "
+    labels:
+      - "housekeeping"
+      - "dependencies"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "[npm] "
+    labels:
+      - "housekeeping"
+      - "dependencies"
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "[bundler] "
+    labels:
+      - "housekeeping"
+      - "dependencies"
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "[gomod] "
+    labels:
+      - "housekeeping"
+      - "dependencies"
