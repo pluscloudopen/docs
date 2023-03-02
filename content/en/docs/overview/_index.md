@@ -37,6 +37,18 @@ For information using the OpenStack Client we like to refer you to the [upstream
 
 ## Authentication
 
- 
+Authentication for the OpenStack Client is configured via files in yaml format. `clouds.yml`, `clouds-public.yml` and `secure.yml` are used to collect the credentials and authentication endpoints of one ore more OpenStack clouds (or pco regions) you want to connect to.
+
+The repository of the SovereignCloudStack (SCS) has two templates for [clouds-public.yml](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/cloud-resources/clouds-public.yaml) and [clouds.yml](https://github.com/SovereignCloudStack/docs/blob/main/community/contribute/cloud-resources/clouds.yaml.sample).
+
+Using `clouds.yml` and `clouds-public.yml` allows you to specify more than one cloud to login to and choose the cloud you want with the parameter `--os-cloud=` or the environment variable `OS_CLOUD` when using the OpenStack Client.
+
+Another option is to download an OpenRC environment file from the Horizon web interface. Being logged into Horizon you click on "<your login name>" in the upper right corner and choose "OpenStack RC File" from the dropdown menu.
+Afterwards you 
+
+``source ./<your openstack rc file>-openrc.sh
+  Please enter your OpenStack Password for project <yourproject> as user <your login name>``
+
+
 
 
