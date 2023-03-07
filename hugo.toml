@@ -230,7 +230,7 @@ proxy = "direct"
 # replacements = "github.com/google/docsy -> ../../docsy"
 [module.hugoVersion]
 extended = true
-min = "0.110.0"
+min = "0.111.1"
 [[module.imports]]
 path = "github.com/google/docsy"
 disable = false
