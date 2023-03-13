@@ -32,7 +32,7 @@ scs1 is a development environment solely provided in the [Sovereign Cloud Stack]
 
 ## Access
 
-There are various options to work with pluscloud open environments. You can interact with the webui (Horizon) or with the API.
+There are various options to work with pluscloud open environments. You can interact with the webui (Horizon) or with the API. 
 
 ### credentials
 
@@ -66,11 +66,13 @@ Afterwards you
 ``source ./<your openstack rc file>-openrc.sh
   Please enter your OpenStack Password for project <yourproject> as user <your login name>``
 
-### terraform provider
+### terraform provider and packer builder
 
 The Terraform provider for OpenStack can be found on the Terraform Registry website at <https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs>. 
 
-This provider enables users to interact with many OpenStack resources. With the Terraform provider for OpenStack, users can create, modify, and delete pluscloud open resources through Terraform configuration files, allowing for streamlined infrastructure management.
+This provider enables users to interact with many OpenStack resources. With the Terraform provider for OpenStack, users can create, modify, and delete pluscloud open resources through Terraform configuration files, allowing for streamlined infrastructure management. 
+
+Furthermore there is an OpenStack builder for packer (<https://developer.hashicorp.com/packer/plugins/builders/openstack>), which allows users to create custom images on OpenStack.
 
 ### ansible collection
 
