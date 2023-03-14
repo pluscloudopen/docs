@@ -10,8 +10,10 @@ description: >
 
 In order to get your s3 credentials you need your OpenStack client set up correctly. If that's the case, you can enter
 
+``$ openstack ec2 credentials create``
+
+The output of that command should be similar to this:
 ``
-$ openstack ec2 credentials create
 +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | Field      | Value                                                                                                                                               |
 +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -28,7 +30,14 @@ Obviously your credentials should be different (those above are fake). Relevant 
 
 ## Create a bucket
 
-With your S3 credentials ready, you need to create a place to store your data in. In S3 terms, this place is called a "bucket".
+With your S3 credentials ready, you need to create a place to store your data in. In S3 terms, this place is called a "bucket". You can either create a bucket via the web ui (Horizon) or on the command line.
+
+### Create a bucket via web ui
+
+Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left menu and then click on "Containers" (that's how buckets are called in Horizon). Click on the "+Container" button then enter a name for your new container, choose a storage policy and choose, whether your new bucket should be accessable publicly or only private (most of the time you would choose private). Click on "Create" to create the new bucket. It should immediately show up in the Container list.
+
+
+### Create a bucket via s3cmd
 
 ##
 
