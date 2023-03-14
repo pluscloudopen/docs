@@ -36,8 +36,9 @@ With your S3 credentials ready, you need to create a place to store your data in
 
 Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left menu and then click on "Containers" (that's how buckets are called in Horizon). Click on the "+Container" button then enter a name for your new container, choose a storage policy and choose, whether your new bucket should be accessable publicly or only private (most of the time you would choose private). Click on "Create" to create the new bucket. It should immediately show up in the Container list.
 
-
 ### Create a bucket via s3cmd
+
+To create a bucket in your object storage from the command line you have to use the s3cmd cli tool.
 
 ##
 
