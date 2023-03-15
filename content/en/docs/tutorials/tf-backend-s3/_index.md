@@ -38,7 +38,25 @@ Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left
 
 ### Create a bucket via s3cmd
 
-To create a bucket in your object storage from the command line you have to use the s3cmd cli tool.
+To create a bucket in your object storage from the command line you can use the s3cmd cli tool, which should be available as a software package for the workstation you use or from <https://s3tools.org/s3cmd>.
+S3cmd needs a configuration file `.s3cfg` like
+``
+[default]
+access_key = 5aen4quuuQu8ci7aoceeyaek8oodohgh
+secret_key = iek1aechaequa8pheitahNgeizai3eig
+enable_multipart = True
+multipart_chunk_size_mb = 50
+use_https = True
+host_base = https://prod1.api.pco.get-cloud.io:8080
+host_bucket = https://prod1.api.pco.get-cloud.io:8080
+signurl_use_https = True
+socket_timeout = 600
+``
+
+Please replace your correct access- and secret-keys and save it to the file `.s3cfg` in your home directory. Using this configuration you should be able to create a bucket in the Object Storage using the command
+``
+s3cmd mb s3://mytfstate
+``
 
 ##
 
