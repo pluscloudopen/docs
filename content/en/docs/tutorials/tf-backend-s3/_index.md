@@ -13,7 +13,7 @@ In order to get your s3 credentials you need your OpenStack client set up correc
 ``$ openstack ec2 credentials create``
 
 The output of that command should be similar to this:
-``
+
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
     | Field      | Value                                                                                                                                               |
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -24,7 +24,6 @@ The output of that command should be similar to this:
     | trust_id   | None                                                                                                                                                |
     | user_id    | poashohhe9eo8EeQuez3ochaeWaeBoiR                                                                                                                    |
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-``
 
 Obviously your credentials should be different (those above are fake). Relevant for S3-access are only the "access" and "secret" values. 
 
@@ -40,7 +39,7 @@ Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left
 
 To create a bucket in your object storage from the command line you can use the s3cmd cli tool, which should be available as a software package for the workstation you use or from <https://s3tools.org/s3cmd>.
 S3cmd needs a configuration file `.s3cfg` like
-``
+
     [default]
     access_key = 5aen4quuuQu8ci7aoceeyaek8oodohgh
     secret_key = iek1aechaequa8pheitahNgeizai3eig
@@ -51,18 +50,15 @@ S3cmd needs a configuration file `.s3cfg` like
     host_bucket = https://prod1.api.pco.get-cloud.io:8080
     signurl_use_https = True
     socket_timeout = 600
-``
 
 Please replace your correct access- and secret-keys and save it to the file `.s3cfg` in your home directory. Using this configuration you should be able to create a bucket in the Object Storage using the command
-``
     s3cmd mb s3://mytfstate
-``
 
 ## Set Up Terraform to use your new bucket as a backend for its tfstate
 
 As we now have a bucket in the object store, we can configure terraform to use it as a backend for the terraform state.
 Please include this part of the backend configuration into your terraform code: 
-``
+
     terraform {
       required_providers {
         openstack = {
@@ -82,16 +78,13 @@ Please include this part of the backend configuration into your terraform code:
       }
     
     }
-``
 Now export your access-key and your secret-key as AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables respectively in order to prevent those being saved to your local disk.
 
-``
     export AWS_ACCESS_KEY_ID='5aen4quuuQu8ci7aoceeyaek8oodohgh'
     export AWS_SECRET_ACCESS_KEY='iek1aechaequa8pheitahNgeizai3eig'
-``
 
 With your credentials exported, you can now initialize terraform like this:
-``
+
     $ tform → terraform init
     
     Initializing the backend...
@@ -125,6 +118,6 @@ With your credentials exported, you can now initialize terraform like this:
     If you ever set or change modules or backend configuration for Terraform,
     rerun this command to reinitialize your working directory. If you forget, other
     commands will detect it and remind you to do so if necessary.
-``
+
 
 
