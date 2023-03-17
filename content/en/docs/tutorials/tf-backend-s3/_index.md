@@ -13,7 +13,7 @@ In order to get your s3 credentials you need your OpenStack client set up correc
 ``$ openstack ec2 credentials create``
 
 The output of that command should be similar to this:
-``
+
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
     | Field      | Value                                                                                                                                               |
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -24,7 +24,6 @@ The output of that command should be similar to this:
     | trust_id   | None                                                                                                                                                |
     | user_id    | poashohhe9eo8EeQuez3ochaeWaeBoiR                                                                                                                    |
     +------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-``
 
 Obviously your credentials should be different (those above are fake). Relevant for S3-access are only the "access" and "secret" values. 
 
@@ -36,33 +35,47 @@ With your S3 credentials ready, you need to create a place to store your data in
 
 Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left menu and then click on "Containers" (that's how buckets are called in Horizon). Click on the "+Container" button then enter a name for your new container, choose a storage policy and choose, whether your new bucket should be accessable publicly or only private (most of the time you would choose private). Click on "Create" to create the new bucket. It should immediately show up in the Container list.
 
-### Create a bucket via s3cmd
+### Create a bucket with aws cli
 
-To create a bucket in your object storage from the command line you can use the s3cmd cli tool, which should be available as a software package for the workstation you use or from <https://s3tools.org/s3cmd>.
-S3cmd needs a configuration file `.s3cfg` like
-``
-    [default]
-    access_key = 5aen4quuuQu8ci7aoceeyaek8oodohgh
-    secret_key = iek1aechaequa8pheitahNgeizai3eig
-    enable_multipart = True
-    multipart_chunk_size_mb = 50
-    use_https = True
-    host_base = https://prod1.api.pco.get-cloud.io:8080
-    host_bucket = https://prod1.api.pco.get-cloud.io:8080
-    signurl_use_https = True
-    socket_timeout = 600
-``
+To create a bucket in your object storage from the command line you can use the aws cli tool, which should be installed into a python virtual environment:
 
-Please replace your correct access- and secret-keys and save it to the file `.s3cfg` in your home directory. Using this configuration you should be able to create a bucket in the Object Storage using the command
-``
-    s3cmd mb s3://mytfstate
-``
+    $ → python3 -m venv awscli
+    $ → . ./awscli/bin/activate
+    $ → pip3 install awscli
+    Collecting awscli
+      Using cached awscli-1.27.93-py3-none-any.whl (4.0 MB)
+    Collecting botocore==1.29.93
+    [...]
+    Installing collected packages: urllib3, jmespath, six, python-dateutil, botocore, colorama, docutils, s3transfer, pyasn1, rsa, PyYAML, awscli
+    Successfully installed PyYAML-5.4.1 awscli-1.27.93 botocore-1.29.93 colorama-0.4.4 docutils-0.16 jmespath-1.0.1 pyasn1-0.4.8 python-dateutil-2.8.2 rsa-4.7.2 s3transfer-0.6.0 six-1.16.0 urllib3-1.26.15
+
+Next aws cli wants to be configured:
+
+    (awscli) $ → aws configure --profile=prod1
+    AWS Access Key ID [None]: 5aen4quuuQu8ci7aoceeyaek8oodohgh
+    AWS Secret Access Key [None]: iek1aechaequa8pheitahNgeizai3eig
+    Default region name [None]: 
+    Default output format [None]: 
+    (awscli) $ → 
+
+With the configuration in place, you can finally create your bucket via cli:
+
+    $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api create-bucket --bucket mytfstate
+
+Hashicorp recommends to enable versioning for the bucket, thus keeping versioned copies of your terraform.tfstate file. You can enable versioning for your bucket like this:
+
+    $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api put-bucket-versioning --bucket mytfstate --versioning-configuration 
+    $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api get-bucket-versioning --bucket mytfstate 
+    {
+    "Status": "Enabled",
+    "MFADelete": "Disabled"
+    }
 
 ## Set Up Terraform to use your new bucket as a backend for its tfstate
 
 As we now have a bucket in the object store, we can configure terraform to use it as a backend for the terraform state.
 Please include this part of the backend configuration into your terraform code: 
-``
+
     terraform {
       required_providers {
         openstack = {
@@ -82,16 +95,13 @@ Please include this part of the backend configuration into your terraform code:
       }
     
     }
-``
 Now export your access-key and your secret-key as AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables respectively in order to prevent those being saved to your local disk.
 
-``
     export AWS_ACCESS_KEY_ID='5aen4quuuQu8ci7aoceeyaek8oodohgh'
     export AWS_SECRET_ACCESS_KEY='iek1aechaequa8pheitahNgeizai3eig'
-``
 
 With your credentials exported, you can now initialize terraform like this:
-``
+
     $ tform → terraform init
     
     Initializing the backend...
@@ -125,6 +135,6 @@ With your credentials exported, you can now initialize terraform like this:
     If you ever set or change modules or backend configuration for Terraform,
     rerun this command to reinitialize your working directory. If you forget, other
     commands will detect it and remind you to do so if necessary.
-``
+
 
 
