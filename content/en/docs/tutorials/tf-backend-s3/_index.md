@@ -136,5 +136,3 @@ With your credentials exported, you can now initialize terraform like this:
     rerun this command to reinitialize your working directory. If you forget, other
     commands will detect it and remind you to do so if necessary.
 
-
-
