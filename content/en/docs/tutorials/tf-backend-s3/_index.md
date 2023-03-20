@@ -33,7 +33,9 @@ With your S3 credentials ready, you need to create a place to store your data in
 
 ### Create a bucket via web ui
 
-Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left menu and then click on "Containers" (that's how buckets are called in Horizon). Click on the "+Container" button then enter a name for your new container, choose a storage policy and choose, whether your new bucket should be accessable publicly or only private (most of the time you would choose private). Click on "Create" to create the new bucket. It should immediately show up in the Container list.
+Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left menu and then click on "Containers" (that's how buckets are called in Horizon) ![Screenshot of Container screen in Horizon](./container2.png). Click on the "+Container" button then enter a name for your new container, choose a storage policy and choose, whether your new bucket should be accessable publicly or only private (most of the time you would choose private). Click on "Create" to create the new bucket ![Screenshot of the Container create dialog in Horizon](./container1.png). It should immediately show up in the Container list ![Screenshot of the Container details screen in Horizon](./container3.png).
+
+
 
 ### Create a bucket with aws cli
 
@@ -60,12 +62,12 @@ Next aws cli wants to be configured:
 
 With the configuration in place, you can finally create your bucket via cli:
 
-    $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api create-bucket --bucket mytfstate
+    (awscli) $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api create-bucket --bucket mytfstate
 
 Hashicorp recommends to enable versioning for the bucket, thus keeping versioned copies of your terraform.tfstate file. You can enable versioning for your bucket like this:
 
-    $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api put-bucket-versioning --bucket mytfstate --versioning-configuration 
-    $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api get-bucket-versioning --bucket mytfstate 
+    (awscli) $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api put-bucket-versioning --bucket mytfstate --versioning-configuration 
+    (awscli) $ → aws --profile=prod1 --endpoint=https://prod1.api.pco.get-cloud.io:8080 s3api get-bucket-versioning --bucket mytfstate 
     {
     "Status": "Enabled",
     "MFADelete": "Disabled"
@@ -135,6 +137,4 @@ With your credentials exported, you can now initialize terraform like this:
     If you ever set or change modules or backend configuration for Terraform,
     rerun this command to reinitialize your working directory. If you forget, other
     commands will detect it and remind you to do so if necessary.
-
-
 
