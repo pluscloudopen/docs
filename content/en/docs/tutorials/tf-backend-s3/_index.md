@@ -33,7 +33,9 @@ With your S3 credentials ready, you need to create a place to store your data in
 
 ### Create a bucket via web ui
 
-Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left menu and then click on "Containers" (that's how buckets are called in Horizon) ![Screenshot of Container screen in Horizon](./container2.png). Click on the "+Container" button then enter a name for your new container, choose a storage policy and choose, whether your new bucket should be accessable publicly or only private (most of the time you would choose private). Click on "Create" to create the new bucket ![Screenshot of the Container create dialog in Horizon](./container1.png). It should immediately show up in the Container list ![Screenshot of the Container details screen in Horizon](./container3.png).
+Logged in to the web ui (Horizon) you can navigate to "Object Store" in the left menu and then click on "Containers" (that's how buckets are called in Horizon) ![Screenshot of Container screen in Horizon](./container2.png). 
+Click on the "+Container" button then enter a name for your new container, choose a storage policy and choose, whether your new bucket should be accessable publicly or only private (most of the time you would choose private). Click on "Create" to create the new bucket ![Screenshot of the Container create dialog in Horizon](./container1.png). 
+It should immediately show up in the Container list ![Screenshot of the Container details screen in Horizon](./container3.png).
 
 
 
