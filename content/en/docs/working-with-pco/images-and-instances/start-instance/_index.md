@@ -11,4 +11,3 @@ Using the button "Launch Instance" you can create one or more new instances and 
 Keep in mind that shell access to the new instance is only possible via ssh key authentication. Thus you either need to create a ssh keypair during instance creation or upload your keypair beforehand.
 
 
-
