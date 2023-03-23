@@ -43,4 +43,18 @@ Pausing your instance means "freezing" it with all its ressources. It will no lo
 #### Suspend Instance
 Suspending the instance will shut down your instance with all its ressources. Resuming it will start it again.
 #### Shelve Instance
- 
+Shelving an instance is similar to suspending it. The memory is not saved, though. You could use shelving for instances you don't need over the weekend but want to use again for the next work week.
+#### Resize Instance
+This dialogue allows you to change some "dimensions" of your instance (like Memory, CPUs and root disk size) by choosing a new flavor. Furthermore you can choose wether you want an unpartitioned disk or you want to partiton the disk yourself. The resizing might take some time.
+#### Lock Instance
+You can prevent accidental change and/or deletion of your instance by "locking" it. A small lock symbol will be displayed for locked instances in Horizon. Administrators of the platform can unlock instances, though.
+#### Soft Reboot Instance
+This will try to shut down all applications before rebooting the instance.
+#### Hard Reboot Instance
+The instance will be rebooted without giving applications time to shut down.
+#### Shut Off Instance
+Instances will be switched off immediately. This might lead to filesystem checks or database recovery operations when the instance is switched on again.
+#### Rebuild Instance
+Rebuilding allows you to re-create an instance but changing characteristics of it (like using a different image). The UUID, volumes and ports of the instance will stay the same. Using it on instances with ceph volumes will not work, though.
+#### Delete instance
+The instance will be deleted. All used ressources will be given back to the pool. 
