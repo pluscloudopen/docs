@@ -31,4 +31,16 @@ Here you can manage metadata for your instance. There is a set of example metada
 #### Edit Security Groups
 Here you can manage the security groups for your instance. If your instance has more than one network interface changes will be applied to all of them. If you want to manage different security groups for different network interfaces please use "Edit Port Security Groups" from the menu.
 #### Edit Port Security Groups
+Security Groups can here be configured for different network interfaces (ports) separately. Furthermore you can edit port characteristics like "Enable Admin State" to forward packets over that port, "Binding VNIC Type" for the port (you would choose "Normal" most of the time for virtual machines) and "Port Security" to activate security features like "anti-spoofing" and allow the use of security groups for that port. 
+#### Console
+Opens a virtual console to the login prompt of your instance. 
+#### View Log
+Allows to review the console log messages of your instance
+#### Rescue Instance
+Rescue mode is reserved for emergencies. This will shut down your instance and start a rescue instance (using the image you select) which mounts the root volume of your instance in order to let you recover data from it or repair the configuration. You can optionally set a password for the rescue instance.
+#### Pause Instance
+Pausing your instance means "freezing" it with all its ressources. It will no longer be available but can be resumed instantly.
+#### Suspend Instance
+Suspending the instance will shut down your instance with all its ressources. Resuming it will start it again.
+#### Shelve Instance
  
