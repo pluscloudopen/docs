@@ -75,3 +75,4 @@ Clicking on the "Static Routes" tab, you can add static routes to your router
 Add the destination network in CIDR notation and define a reachable IP address for the router to connect to the destination network.
 
 ## Security Groups
+A very important part of the network environment of your project are the security groups, which work as firewall rule sets to allow or disallow traffic to your instances. Only wanted traffic should allowed to reach your instances.
