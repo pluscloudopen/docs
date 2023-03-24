@@ -45,3 +45,25 @@ A detailed configuration of the subnet is available in the "Subnet Details" menu
 Here you can define, whether [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) should be available in the subnet. If you want, you can further specify the subnet pool from where DHCP addresses should be allocated. Allocation pools should at least start with the .5 address because there could be other network services already running on those first addresses of the network.
 If you want to use specific nameservers for your network, you can define them in the "DNS Name Servers" field. Specific host routes to specific networks can be set in the "Host Routes" field, where you define the destination network in CIDR notation followed by the gateway IP address over which you can reach the destination network.
 Click on "Create" to let OpenStack provision the new network and subnetwork.
+
+## Router
+Networks need to be connected by routers in order to be able to communicate. This is true for external networks as well as internal networks.
+
+### Routers
+The "Routers" menu lists all configured routers, allows the management and deletion of those routers and the creation of new ones.
+![screenshot of the routers menu](./image2020-10-16_12-53-52.png)
+
+### Create Router
+To create a new router click on "Create Router", give it a name, allow it to route packets by clicking on "Enable Admin State" and select an "External Network" from the list.
+![screenshot of the create routers menu](./image2020-10-16_13-26-30.png)
+
+### Add Interface
+Cicking on the name of an already existing router, you see the current interfaces and their configuration
+
+![screenshot of the interfaces menu](./2023-03-24_14-44.png)
+
+If you click on "Add Interface" you can choose which subnet you want the route to be connected to and which ip address the new router interface should get. 
+
+![screenshot of the add interface menu](./image2020-10-16_13-30-17.png)
+
+
