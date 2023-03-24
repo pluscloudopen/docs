@@ -17,4 +17,23 @@ In the network topology menu entry you can get an overview about the networking 
 
 <img src="image2020-10-16_9-33-31.png" alt="screenshot of a network topology" width="30%" height="30%" title="Network Diagram">
 
-The above diagram shows two private networks which are connected to a public network ("provider network" in OpenStack language) with two routers. Hovering with your mouse over the elements of the diagram shows more information and shortcuts to other functions.
+The above diagram shows two private networks which are connected to a public network ("provider network" in OpenStack language) with two routers. Hovering with your mouse over the elements of the diagram shows more information and shortcuts to other functions of the web gui.
+
+### Networks
+Under "Networks" you find the configured networks in your environment and you can manage, add or delete networks.
+![screenshot of the networks menu](./image2020-10-16_10-8-2.png)
+
+Each network needs an associated subnet - which is set up during network creation, too. The external network - "ext01" in case of pluscloud open - is configured by the provider and cannot be changed.
+
+#### Create networks
+Klicking on "Create network" brings up a dialogue to define a new network. 
+
+![screenshot of the create network menu](./image2020-10-16_10-26-51.png) 
+
+You need to give the new network a name, decide if it should receive traffic (by klicking "Enable Admin State") and decide if you want to create a new subnet in the new network or use an existing one. The "Availability Zone Hints" currently refers to all of the respective pluscloud open environment as there is only one availability zone per pluscloud open environment.
+
+If you chose "Create Subnet" you have to define the subnet as the next step. 
+
+![screenshot of the subnet tab](./image2020-10-16_10-26-51.png)  
+
+Here you create a subnet which is associated with the new network. You need a valid "Network Address" of a [RFC1918](https://www.rfc-editor.org/rfc/rfc1918) network in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation. If you don't specify a "Gateway IP" the first IP address of the subnet will automatically become the gateway IP address. If you don't want a gateway in your network, klick on "Disable Gateway".
