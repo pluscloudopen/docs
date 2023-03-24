@@ -66,4 +66,12 @@ If you click on "Add Interface" you can choose which subnet you want the route t
 
 ![screenshot of the add interface menu](./image2020-10-16_13-30-17.png)
 
+### Add Static Route
 
+Clicking on the "Static Routes" tab, you can add static routes to your router
+
+![screenshot of the add static route menu](./image2020-10-16_13-34-30.png)
+
+Add the destination network in CIDR notation and define a reachable IP address for the router to connect to the destination network.
+
+## Security Groups
