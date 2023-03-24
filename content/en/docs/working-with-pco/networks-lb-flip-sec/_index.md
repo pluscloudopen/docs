@@ -34,6 +34,14 @@ You need to give the new network a name, decide if it should receive traffic (by
 
 If you chose "Create Subnet" you have to define the subnet as the next step. 
 
-![screenshot of the subnet tab](./image2020-10-16_10-26-51.png)  
+![screenshot of the subnet tab](./image2020-10-16_10-37-47.png)  
 
-Here you create a subnet which is associated with the new network. You need a valid "Network Address" of a [RFC1918](https://www.rfc-editor.org/rfc/rfc1918) network in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation. If you don't specify a "Gateway IP" the first IP address of the subnet will automatically become the gateway IP address. If you don't want a gateway in your network, klick on "Disable Gateway".
+Here you create a subnet which is associated with the new network. You need a valid "Network Address" of a [RFC1918](https://www.rfc-editor.org/rfc/rfc1918) network in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation. If you don't specify a "Gateway IP" the first IP address of the subnet will automatically become the gateway IP address. If you don't want a gateway in your network, klick on "Disable Gateway". 
+
+A detailed configuration of the subnet is available in the "Subnet Details" menu.
+
+![screenshot of the subnet details menu](./image2020-10-16_10-39-43.png)
+
+Here you can define, whether [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) should be available in the subnet. If you want, you can further specify the subnet pool from where DHCP addresses should be allocated. Allocation pools should at least start with the .5 address because there could be other network services already running on those first addresses of the network.
+If you want to use specific nameservers for your network, you can define them in the "DNS Name Servers" field. Specific host routes to specific networks can be set in the "Host Routes" field, where you define the destination network in CIDR notation followed by the gateway IP address over which you can reach the destination network.
+Click on "Create" to let OpenStack provision the new network and subnetwork.
