@@ -76,3 +76,7 @@ Add the destination network in CIDR notation and define a reachable IP address f
 
 ## Security Groups
 A very important part of the network environment of your project are the security groups, which work as firewall rule sets to allow or disallow traffic to your instances. Only wanted traffic should allowed to reach your instances.
+
+As a default there is a "Default Security Group" active, which includes a set of rules for incoming and outgoing traffic. This group is normally associated to new instances in order to allow ssh logins.
+
+![screenshot of the default security group menu](./image2020-10-16_14-17-36.png)
