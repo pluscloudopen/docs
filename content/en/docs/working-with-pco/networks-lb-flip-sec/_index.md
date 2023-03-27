@@ -139,4 +139,14 @@ The list "**Available Instances**" contains candidate instances for your pool. C
 
 The "**IP Adress**" is the IP address of the network interface of the instance, that should receive the traffic from the loadbalancer. IPv4 and IPv6 addresses are allowed. The "**Subnet**" should be the subnet which contains the IP address of the member. The "**Port**" would be the TCP port on which the member should receive traffic from the loadbalancer. The "**Weight**" defines the relative number of requests the respective member should receive in relation to the other members. Allowed numbers are between 1 and 256. 
 If you click on the arrow you can define even more pool details like "**Monitor Address**" and "**Monitor Port**" - if you want to define a monitoring address that is seperate from the service (IP address and port) on your instance. Leave it unchanged in order to use member IP address and port for monitoring. 
-If you want to define a "**Backup**" or failover member in your new pool, which is only used, if all other members are not reachable, click on "Yes" here. 
+If you want to define a "**Backup**" or failover member in your new pool, which is only used, if all other members are not reachable, click on "Yes" here.
+
+The last step is the "**Monitor Details** menu. Monitoring is used to determine the state of the pool members. So called "health checks" are used for all members in the pool and determine whether the checked member will receive traffic from the loadbalancer. If the health check fails, the member will receive no traffic. Each pool can have its own health check, which will be used for all members in the pool.
+
+![screenshot of the monitor details menu](./image2020-10-16_16-41-51.png)
+
+You can choose a "**Type**" of monitor from the list of HTTP, HTTPS, PING, TCP, TLS-HELLO, UDP-CONNECT and SCTP. Depending on your choice you will have to enter different bits of information.
+The "**Delay (sec)**" determines the time between the health checks. It should be as big as "**Timeout**" or bigger. The "**Max Retries**" lets you choose how often the loadbalancer should try the health check before setting the state of the member to **inactive** (should be a number between 1 and 10). "**Max Retries Down**" is the number of allowed connection failures before the pool member will be declared "**faulty**" (again a number beteween 1 and 10). The "**Timeout**" describes the time a healtch check can take in order to succeed (should be a number bigger or equals 0 and smaller or equal to the "**Delay (sec)**").
+The "**HTTP Method**" can be one of the allowed HTTP methods (like GET, HEAD, etc.) and "**Expected Codes**" should be one HTTP code (or a list of them) which come back for a successful health check. 
+The "**URL Path**" can be used to define a custom path for your health checks. Remember that this is requested by the monitor every "**Delay (sec)**".
+If all the required information has been entered in the forms, the loadbalancer can be created. If you want the loadbalancer to be accessible from the public internet, you have to assign a floating IP address to it.
