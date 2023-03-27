@@ -90,4 +90,25 @@ Clicking on "+Create Security Group" will create a new security group and lead y
 You should use the description field (in order to have an easy overview of what each rule is intended to do), define the direction of traffic (egress/ingress) as well as the network port the rule should apply to. You can define a single port, some ports or a port range. 
 For ICMP traffic you define icmp type and code.
 
-![screenshot of the add rule menu](./)
+![screenshot of the add rule menu](./image2020-10-16_15-11-48.png)
+
+Remote describes source or destination - depending whether it should become an ingress- or an egress-rule. You can here define an IP address (in CIDR notation) or another security group.
+
+## Loadbalancer
+
+The "Load Balancers" menu allows you to define loadbalancing services. Clicking on "Load Balancers" shows a page listing all already defined loadbalancers. These can here be managed or deleted. And you can add new ones by clicking on "+Create Load Balancer".
+In order to create a new loadbalancer you have to define various parameters. You are guided through a few menus and as soon as you have entered enough information the button "Create Load Balancer" is activated and you can start the creation process. Asterisks indicate fields, which need to be filled in in order to create a loadbalancer.
+
+![screenshot of the create load balancer menu](./image2020-10-16_16-0-5.png)
+
+"**Name**" and "**IP address**" are the first two bits of information you have to enter. Choose an IP address from your subnet. If you leave that field blank an IP address will be assigned from the subnet you choose (as long as DHCP is active, there).
+
+"**Description**" is optional but should be used in order to store information about the why and what of this particular loadbalancer instance. You cannot choose a "**Flavor**". Pluscloud open is using the amphora flavor here. As already mentioned you have to choose a "**Subnet**" which the loadbalancer should be connected to. "**Admin State Up**" allows you to create the loadbalancer switched off. It needs to be switched to "**Admin State Up**" in order to balance traffic.
+
+The next menu "Listener Details" defines the listener for the new loadbalancer
+
+![screenshot of the listener menu](./image2020-10-16_16-12-24.png)
+
+Each and every port on the new loadbalancer, that should receive traffic, will be configured seperately and assigned to the loadbalancer. You can define many listeners per loadbalancer as long as each one uses a different port. 
+
+"**Protocol**" defines the protocol that should be expected on the "**Port**". You can only choose "TERMINATED_HTTPS" as protocol, if you have activated and configured the key manager service (Barbican). The "**Port**" number should be between 1 and 65535.
