@@ -77,6 +77,17 @@ Add the destination network in CIDR notation and define a reachable IP address f
 ## Security Groups
 A very important part of the network environment of your project are the security groups, which work as firewall rule sets to allow or disallow traffic to your instances. Only wanted traffic should allowed to reach your instances.
 
-As a default there is a "Default Security Group" active, which includes a set of rules for incoming and outgoing traffic. This group is normally associated to new instances in order to allow ssh logins.
+As a default there is a "Default Security Group" active for instances which have no other security groups assigned. This includes a set of rules for incoming and outgoing traffic. This group is normally associated to new instances in order to allow ssh logins.
 
 ![screenshot of the default security group menu](./image2020-10-16_14-17-36.png)
+
+"Egress" is for outgoing traffic. Any traffic (including ICMP) is allowed for IPv4 and IPv6. "Ingress" or incoming traffic is allowed for ICMP as well as SSH (port 22). Rules, that have a "Remote Security Group" "default" defined are used to assure, that any source instance can reach any other destination instance in that "default" group via IPv4 and IPv6. 
+Remember, that security groups have to be assigned to each instance individually. These do not apply for all of your environment.
+
+### Create Security Group
+
+Clicking on "+Create Security Group" will create a new security group and lead you to a new menu, that allows you to add new security rules to your new security group. There is a set of pre-defined rules for various protocols you can define "Custom TCP/UDP/ICMP" rules for individual ports.
+You should use the description field (in order to have an easy overview of what each rule is intended to do), define the direction of traffic (egress/ingress) as well as the network port the rule should apply to. You can define a single port, some ports or a port range. 
+For ICMP traffic you define icmp type and code.
+
+![screenshot of the add rule menu](./)
