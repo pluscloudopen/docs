@@ -112,3 +112,31 @@ The next menu "Listener Details" defines the listener for the new loadbalancer
 Each and every port on the new loadbalancer, that should receive traffic, will be configured seperately and assigned to the loadbalancer. You can define many listeners per loadbalancer as long as each one uses a different port. 
 
 "**Protocol**" defines the protocol that should be expected on the "**Port**". You can only choose "TERMINATED_HTTPS" as protocol, if you have activated and configured the key manager service (Barbican). The "**Port**" number should be between 1 and 65535.
+
+With the "**Client Date Timeout**" you configure how long TCP connections to clients should be allowed to be kept alive if the client is inactive. The "**TCP Inspect Timeout**" is the time in milliseconds the loadbalancer will wait for additional content. Timouts to the loadbalancer members are configured in the "**Member Connect Timeout**" field. You can limit the number of allowed connections on the respective listener in the "**Connection Limit**" field - "-1" means unlimited. If you want to insert HTTP headers you can choose one or both of the supported options at "**Insert Headers**".
+
+As the next step you have to define the "**Pool Details**" for the new loadbalancer. A "Pool" is a group of member instances which should receive traffic via the loadbalancer.
+
+![screenshot of the pool details menu](./image2020-10-16_16-19-9.png)
+
+First you define the loadbalancing "**Algorithm**"
+  
+    * LEAST_CONNECTIONS: sends the next request to the instance with the smallest number of connections in the pool
+    * ROUND_ROBIN: sends reqeusts randomly to the next available instance in the pool
+    * SOURCE_IP: sends requests from the same source IP address always to the same instance in the pool
+
+If your application needs "**Session Persistence**" you can choose the method here
+
+    * SOURCE_IP: The source IP address is used as a persistence characteristic
+    * HTTP_COOKIE: HTTP cookies, that are set from the compute instance in the pool are used as a persistence characteristic
+    * APP_COOKIE: Your application uses/creates a custom cookie which you have to fill in the "**Cookie Name**" field.
+
+The "**Pool Members**" for the new loadbalancer pool are defined in the next menu. You can choose from the instances in the list.
+
+![screenshot from the pool members menu](./image2020-10-16_16-31-8.png)
+
+The list "**Available Instances**" contains candidate instances for your pool. Click "Add" to add them to the pool. Click "Add external member" to add members that are not displayed in the list.
+
+The "**IP Adress**" is the IP address of the network interface of the instance, that should receive the traffic from the loadbalancer. IPv4 and IPv6 addresses are allowed. The "**Subnet**" should be the subnet which contains the IP address of the member. The "**Port**" would be the TCP port on which the member should receive traffic from the loadbalancer. The "**Weight**" defines the relative number of requests the respective member should receive in relation to the other members. Allowed numbers are between 1 and 256. 
+If you click on the arrow you can define even more pool details like "**Monitor Address**" and "**Monitor Port**" - if you want to define a monitoring address that is seperate from the service (IP address and port) on your instance. Leave it unchanged in order to use member IP address and port for monitoring. 
+If you want to define a "**Backup**" or failover member in your new pool, which is only used, if all other members are not reachable, click on "Yes" here. 
