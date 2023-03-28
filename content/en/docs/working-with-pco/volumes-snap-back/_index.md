@@ -20,3 +20,16 @@ With "**Edit Volume**" you can change the name of your volume and/or add a descr
 "**Create Snapshot**" allows you to snapshot the respective volume. You have to give it a name (and an optional description) first. Please be aware, that snapshotting a volume which is mounted and used can lead to data corruption. The safe way to take snapshots is to unmount the respective volume first. Snapshots are not backups.
 
 Using "**Create Backup**" creates a backup of your volume. If you choose a snapshot of your volume, only the snapshot will be backed up. If your volume backup fits into your object store quota, you can choose an object store bucket and write the backup there.
+
+You can convert a volume into an image which you can use to create an instance with "**Upload to Image**". You have to choose a disk format for the image (mostly "raw" or "qcow2"). If the volume is in use you can "force" the backup by clicking on "**Force**".
+
+With "**Update Metadata**" you can manage the volume metadata. You find pre-defined metadata definitions which you can use or you can define custom metadata with the "**Custom**" field. The max length for a single key is 255 characters.
+
+### Create Volume
+
+In order to create a new volume you click on "+Create Volume" and then you are stepped through a few menus to define the new volume
+
+![screenshot of the create volume menu](image2020-10-22_15-37-55.png)
+
+Apart from a name and an optional description you can choose a "**Volume Source**" e. g. an image, a snapshot or other volumes. Depending on your choice the input fields change (but those are selfexplaining). The chosen source determines the size of the new volume. You can assign the volume to a volume "**Group**", that you have defined beforehand.
+ 
