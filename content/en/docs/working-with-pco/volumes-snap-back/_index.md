@@ -25,6 +25,10 @@ You can convert a volume into an image which you can use to create an instance w
 
 With "**Update Metadata**" you can manage the volume metadata. You find pre-defined metadata definitions which you can use or you can define custom metadata with the "**Custom**" field. The max length for a single key is 255 characters.
 
+### Accept Transfer
+
+When you are transferring volumes from one project to another you can accept a transfer with clicking on "Accept Transfer". Transfers are initiated from the command line with ``openstack volume transfer request``. With that the owner of a volume creates a transfer request and sends the transfer ID and a key to the receiver of the volume. The receiver clicks on "Accept Transfer" and enters the transfer ID and key to receive the volume.
+
 ### Create Volume
 
 In order to create a new volume you click on "+Create Volume" and then you are stepped through a few menus to define the new volume
@@ -32,4 +36,12 @@ In order to create a new volume you click on "+Create Volume" and then you are s
 ![screenshot of the create volume menu](image2020-10-22_15-37-55.png)
 
 Apart from a name and an optional description you can choose a "**Volume Source**" e. g. an image, a snapshot or other volumes. Depending on your choice the input fields change (but those are selfexplaining). The chosen source determines the size of the new volume. You can assign the volume to a volume "**Group**", that you have defined beforehand.
- 
+
+## Backups
+
+The "**Backups**" menu lists your current backups and lets you either delete them or use them for restore (e. g. by creating a new volume from the backup).
+
+## Snapshots
+
+Here you see a list of your current snapshots and you can manage them. This includes launching an instance from a snapshot with "**Launch as Instance**", changing a snapshots name or description, creating a backup from your snapshot with "**Create Backup**", delete the snapshot or change the metadata for your snapshot. 
+You can choose from a set of pre-defined metadata or you can add "**Custom**" metadata keys. Max key length is 255 characters.
