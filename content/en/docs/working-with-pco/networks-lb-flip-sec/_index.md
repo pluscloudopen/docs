@@ -150,3 +150,11 @@ The "**Delay (sec)**" determines the time between the health checks. It should b
 The "**HTTP Method**" can be one of the allowed HTTP methods (like GET, HEAD, etc.) and "**Expected Codes**" should be one HTTP code (or a list of them) which come back for a successful health check. 
 The "**URL Path**" can be used to define a custom path for your health checks. Remember that this is requested by the monitor every "**Delay (sec)**".
 If all the required information has been entered in the forms, the loadbalancer can be created. If you want the loadbalancer to be accessible from the public internet, you have to assign a floating IP address to it.
+
+## Floating IPs
+
+The menu "**Floating IPs**" allows you to list and manage public IP addresses in your project. Floating IP addresses have to be allocated before they can be associated to a service. They can be disassociated from a service, too - in order to let it no longer be reachable from the internet. 
+
+![screenshot of the allocate floating IP menu](./image2020-10-16_16-58-16.png)
+
+You can associate floating IP addresses to instances and loadbalancers. Be aware of the services you want to be reachable from the internet and configure your security groups accordingly. Floating IP addresses are accounted and billed as long as they are reserved - whether they are associated to a service or not.
