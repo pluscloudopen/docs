@@ -45,3 +45,14 @@ The "**Backups**" menu lists your current backups and lets you either delete the
 
 Here you see a list of your current snapshots and you can manage them. This includes launching an instance from a snapshot with "**Launch as Instance**", changing a snapshots name or description, creating a backup from your snapshot with "**Create Backup**", delete the snapshot or change the metadata for your snapshot. 
 You can choose from a set of pre-defined metadata or you can add "**Custom**" metadata keys. Max key length is 255 characters.
+
+## Groups
+
+In volume groups you can form a group of volumes which you want to treat as one. It might be sensible to snapshot volumes, that hold various parts of an application, at the same time in order to assure data consistency. You can create new groups with "**Create Group**" or edit existing ones.
+
+## Group Snapshots
+
+Here you can manage your group snapshots.
+
+## Crypted Volumes
+
