@@ -56,3 +56,14 @@ Here you can manage your group snapshots.
 
 ## Crypted Volumes
 
+Pluscloud open allows to create crypted volumes, which are based on "LUKS" ([Linux Unified Key Setup](https://gitlab.com/cryptsetup/cryptsetup)), which uses the Linux kernel module dm-crypt and should be ideal for crypting volumes for Linux instances. Keys are generated during creation of the volume and saved into the keystore on pluscloud open. Beware, that deleting crypted volumes not only deletes the volume but also the associated key. **A recovery of the data is not possible** after deletion. 
+
+Creating a crypted volume is pretty easy. You just choose "LUKS" as "**Type**" 
+
+![screenshot of the create volume menu](2023-03-28_16-34.png)
+
+Depending on the size of the volume, it can take a little time to create it. You can use the volume as any other non-encrypted volume. The encryption is handled in the background. The volume listing should show your volume as encrypted:
+
+![screenshot of an encrypted volume](./2023-03-28_16-38.png)
+
+The web gui does not allow the creation of encrypted root volumes, which you need in order to have 
