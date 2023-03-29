@@ -66,4 +66,75 @@ Depending on the size of the volume, it can take a little time to create it. You
 
 ![screenshot of an encrypted volume](./2023-03-28_16-38.png)
 
-The web gui does not allow the creation of encrypted root volumes, which you need in order to have 
+The web gui does not allow the creation of encrypted root volumes, which you need if you want all the volumes of your instance to be crypted.
+
+### Crypted boot images
+
+To crypt the root volume of an instance, you have to create a crypted volume first in order to use that as a root volume for a new instance. You create that volume from an image of the operating system you want for your new instance:
+    
+    openstack volume create --type LUKS --image "imagename" --size <size in gb> <volume name>
+     
+    openstack volume create --type LUKS --image "Ubuntu 20.04" --size 20 ubuntuencrypt
+    +---------------------+--------------------------------------+
+    | Field               | Value                                |
+    +---------------------+--------------------------------------+
+    | attachments         | []                                   |
+    | availability_zone   | nova                                 |
+    | bootable            | false                                |
+    | consistencygroup_id | None                                 |
+    | created_at          | 2021-12-10T09:06:49.000000           |
+    | description         | None                                 |
+    | encrypted           | True                                 |
+    | id                  | cd4d8c9a-632a-4045-8b09-da57fcbc5848 |
+    | multiattach         | False                                |
+    | name                | ubuntuencrypt                        |
+    | properties          |                                      |
+    | replication_status  | None                                 |
+    | size                | 20                                   |
+    | snapshot_id         | None                                 |
+    | source_volid        | None                                 |
+    | status              | creating                             |
+    | type                | LUKS                                 |
+    | updated_at          | None                                 |
+    | user_id             | 824e462845c14ccd84cb091944dfe74b     |
+    +---------------------+--------------------------------------+
+
+The parameter "**--image**" allows you to create a volume directly from an image (either from the repository or uploaded by yourself).
+
+Now you can create an instance using the volume you just created. You have to add a flavor (name or ID) and you should not forget to add a ssh key name, which allows you to login to the instance afterwards. Aditionally you have to add an existing network, where the instance will be spawned in:
+
+    openstack server create --flavor <Flavor name or ID> --network <network name or ID> --key-name <keyname> --volume <volumename or ID> <instancename>
+ 
+    openstack server create --flavor 1C-1GB-20GB --network Test --key-name mhamm --volume cd4d8c9a-632a-4045-8b09-da57fcbc5848 bootencubuntu
+    +-----------------------------+----------------------------------------------------+
+    | Field                       | Value                                              |
+    +-----------------------------+----------------------------------------------------+
+    | OS-DCF:diskConfig           | MANUAL                                             |
+    | OS-EXT-AZ:availability_zone |                                                    |
+    | OS-EXT-STS:power_state      | NOSTATE                                            |
+    | OS-EXT-STS:task_state       | scheduling                                         |
+    | OS-EXT-STS:vm_state         | building                                           |
+    | OS-SRV-USG:launched_at      | None                                               |
+    | OS-SRV-USG:terminated_at    | None                                               |
+    | accessIPv4                  |                                                    |
+    | accessIPv6                  |                                                    |
+    | addresses                   |                                                    |
+    | adminPass                   | jy8CoGki7HL8                                       |
+    | config_drive                |                                                    |
+    | created                     | 2021-12-10T09:16:50Z                               |
+    | flavor                      | 1C-1GB-20GB (cb635210-085e-4659-a10e-d1dcddf897f9) |
+    | hostId                      |                                                    |
+    | id                          | ca0bba1f-64e7-4678-bf49-bfe9ad71881d               |
+    | image                       | N/A (booted from volume)                           |
+    | key_name                    | mhamm                                              |
+    | name                        | bootencubuntu                                      |
+    | progress                    | 0                                                  |
+    | project_id                  | 5b6bd2a13a624b5b8b393971cc03324a                   |
+    | properties                  |                                                    |
+    | security_groups             | name='default'                                     |
+    | status                      | BUILD                                              |
+    | updated                     | 2021-12-10T09:16:50Z                               |
+    | user_id                     | 824e462845c14ccd84cb091944dfe74b                   |
+    | volumes_attached            |                                                    |
+    +-----------------------------+----------------------------------------------------+
+
