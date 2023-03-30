@@ -15,4 +15,4 @@ Clicking on "**Launch Instance**" opens a dialogue, which will guide you through
 
 As usual Asterisks (*) mark required information and as soon as enough information has been entered, the "**Launch instance**" button will be activated.
 
-You need to give your new instance a name in the "**Instance Name**" field. The description is optional. There is only one "**Availability Zone**" 
+You need to give your new instance a name in the "**Instance Name**" field. The description is optional. There is only one "**Availability Zone**" you can choose. You can use the "**Count**" field to spawn serveral instances of the same type at the same time.
