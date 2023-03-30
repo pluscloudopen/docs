@@ -138,3 +138,10 @@ Now you can create an instance using the volume you just created. You have to ad
     | volumes_attached            |                                                    |
     +-----------------------------+----------------------------------------------------+
 
+The instance is now using encrypted storage. Please keep in mind to delete the volume after deleting the instance as it is not deleted automatically.
+
+### List secrets
+
+As mentioned earlier there is a key saved to the OpenStack keystore (Barbican) for each encrypted volume. You can list all keys saved for your project with ``openstack secret list``.
+
+
