@@ -33,5 +33,17 @@ Now - by clicking on "Next" - you have to choose the "**Flavor**" of your new in
 
 Clicking on the little arrow on the left - in front of each flavor line - shows what impact the choice of that flavor has on your consumption. By clicking on the "up" arrow you choose to use the flavor for the instance creation. If the choice of a flavor would consume more resources than available in your quota, it is marked with a yellow "warning" exclamation mark.
 
-Pluscloud open is in charge of the creation an management of the flavors.
+Pluscloud open is in charge of the creation an management of the flavors.s
+
+Next you need to choose the "**Networks**" you want your new instance to be connected to.
+
+<img src="2023-03-31_10-04.png" alt="screenshot of the networks menu" width="50%" height="50%" title="Networks Menu">
+
+Depending on your network topology you would choose one or more networks from the networks listed under "**Available**".
+
+"**Security Groups**" allow you to choose which security groups should be applied for your new instance.
+
+<img src="2023-03-31_10-34.png" alt="screenshot of the security groups menu" width="50%" height="50%" title="Security Groups Menu">
+
+The "default" security group would allow for basic access to your instance. Additional security groups could (dis)allow traffic to and from specific networks or specific ports. If you remove the default security group, you will only be able to access your new instance via vnc console.
 
