@@ -143,5 +143,3 @@ The instance is now using encrypted storage. Please keep in mind to delete the v
 ### List secrets
 
 As mentioned earlier there is a key saved to the OpenStack keystore (Barbican) for each encrypted volume. You can list all keys saved for your project with ``openstack secret list``.
-
-
