@@ -45,5 +45,40 @@ Depending on your network topology you would choose one or more networks from th
 
 <img src="2023-03-31_10-34.png" alt="screenshot of the security groups menu" width="50%" height="50%" title="Security Groups Menu">
 
-The "default" security group would allow for basic access to your instance. Additional security groups could (dis)allow traffic to and from specific networks or specific ports. If you remove the default security group, you will only be able to access your new instance via vnc console.
+The "default" security group would allow for basic access to your instance. Additional security groups could (dis)allow traffic to and from specific networks or specific ports. If you remove the default security group, you will only be able to access your new instance via VNC console.
+
+The "**Key Pair**" menu allows you to generate a new ssh public/privatey key pair by clicking on "Create Key Pair" or to import a key pair you already have with "Import Key Pair" in order to be able to login to your new instance via secure shell (ssh).
+
+<img src="2023-03-31_13-30.png" alt="screenshot of the key pair menu" width="50%" height="50%" title="Key Pair Menu">
+
+If you create a key pair, you are presented with the _private_ key, which you should save to your local workstation and protect from eavesdropping through third parties. The public half of the key pair is saved in your OpenStack project. If you choose to import a "key pair" you actually only import the _public_ part of your key pair. The private key remains in your posession. 
+
+You can also quickly create a new public/private key pair on the command line with ``ssh-keygen -t rsa -f cloud.key`` and then import the public key ``cloud.key.pub`` into your OpenStack project.
+If you are using Windows you would use PuttyGen to do the same - just be sure to choose ``openssh`` as the key format.
+
+"**Configuration**" is a menu, that allows you to upload and execute a script, that can be used to customize your instance after launch.
+
+<img src="2023-03-31_13-47.png" alt="screenshot of the configuration menu" width="50%" height="50%" title="Configuration Menu">
+
+As many cloud images use [cloud-init](https://cloudinit.readthedocs.io/en/latest/) for customization nowadays, this option might be used a little less common than usual.
+Another option here is "**Disk Partition**", which can be done "automatic" and "manual". "Automatic" basically creates one partition per volume. With "manual" you can create more partitions per volume.
+
+With "**Server Groups**" you can assign your new instance to an existing server group in order to let your new instance be created either next to other instances in that server group or explicitly not next to other instances in that group (affinity - anti-affinity).
+
+<img src="2023-03-31_13-54.png" alt="screenshot of the server group menu" width="50%" height="50%" title="Server Group Menu">
+
+Server groups can have affinity, anti-affinity, soft-affinity and soft-anti-affinity policies. While the affinity policy will fail (and not create the instance), when it cannot place the new instance next to an existing instance of that server group, the soft-affinity policy will place the new instance not next to an existing instance of that server group, if it is not possible (but create the new instance anyway).
+
+If you want to add some "**Scheduler Hints**" in order to affect the placement of your new instance you can either choose from the existing metadata catalog or create your own keys in the first line of the left side.
+
+<img src="2023-03-31_14-17.png" alt="screenshot of the scheduler hints menu" width="50%" height="50%" title="Scheduler Hints Menu">
+
+Just pull a key from left to right in order to assign it to the new instance. Additional information is displayed in the box at the bottom of the menu.
+
+Similar to this, you can add (more) metadata to your new instance in the "**Metadata**" menu.
+
+<img src="2023-03-31_14-22.png" alt="screenshot of the metadata menu" width="50%" height="50%" title="Metadata Menu">
+
+There is a catalog of already existing metadata available. But you can create your own keys in the "Custom" field, too.
+
 
