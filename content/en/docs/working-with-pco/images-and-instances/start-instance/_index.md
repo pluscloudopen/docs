@@ -73,12 +73,11 @@ If you want to add some "**Scheduler Hints**" in order to affect the placement o
 
 <img src="2023-03-31_14-17.png" alt="screenshot of the scheduler hints menu" width="50%" height="50%" title="Scheduler Hints Menu">
 
-Just pull a key from left to right in order to assign it to the new instance. Additional information is displayed in the box at the bottom of the menu.
+Just click "+" on a key from left to move it to the right in order to assign it to the new instance. Additional information is displayed in the box at the bottom of the menu.
 
 Similar to this, you can add (more) metadata to your new instance in the "**Metadata**" menu.
 
 <img src="2023-03-31_14-22.png" alt="screenshot of the metadata menu" width="50%" height="50%" title="Metadata Menu">
 
 There is a catalog of already existing metadata available. But you can create your own keys in the "Custom" field, too.
-
-
+Just click "+" on the the wanted item on the left to move it to the right.
