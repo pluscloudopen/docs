@@ -24,4 +24,10 @@ You can even up- and download content into your containers/buckets. Just click o
 
 ![screenshot of the upload menu](./2023-04-05_15-52.png)
 
-then click on "**Upload File**". Objects can be downloaded with the "**Download**" button on the right.
+then click on "**Upload File**". Objects can be downloaded with the "**Download**" button on the right. But there are other options in that menu.
+
+<img src="2023-04-05_16-00.png" alt="screenshot of the obs manage menu" width="70%" height="70%" title="manage options">
+
+"**View Details**" gives you some information about that object (like size, content type, etc.). With "**Edit**" you can change the content of that object. But there is no in place editing for object storage - the new content is uploaded with the old object name.
+
+Furthermore you can copy an object into another container/bucket by choosing "**Copy**". "**Delete**" obviously deletes the object.
