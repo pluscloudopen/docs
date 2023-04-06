@@ -116,3 +116,21 @@ As the ``openstack container`` command seems not to allow uploads (yet?), you ha
                             folder name.
       --ignore-checksum     Turn off checksum validation for uploads.
 
+There are several options for managing your object storage via the S3 protocol, as well. One is [s3cmd](https://s3tools.org/s3cmd), which is available for various platforms. The other one is [awscli](https://pypi.org/project/awscli/) - a "universal command line interface for Amazon Web Services", which we have already covered in our Tutorial "[OpenStack Object Storage as a Backend for Terraform Statefiles](https://docs.pco.get-cloud.io/docs/tutorials/tf-backend-s3/)".
+
+For s3cmd you need a configuration file ``.s3cfg`` which you can create in an assisted manner by executing ``s3cmd --configure``. As already mentioned, you can create your credentials for object storage access with ``openstack ec2 credentials create``, list them with ``openstack ec2 credentials list`` and see them with ``openstack ec2 credentials show <accesskey>``. You need to have them ready in order to configure s3cmd.
+
+After the configuration you should have an ``.s3cfg`` file similar to this:
+
+    [default]
+    access_key = <youraccesskey>
+    secret_key = <yoursecretkey>
+    enable_multipart = True
+    multipart_chunk_size_mb = 50
+    use_https = True
+    host_base = https://prod1.api.pco.get-cloud.io:8080
+    host_bucket = https://prod1.api.pco.get-cloud.io:8080
+    signurl_use_https = True
+    socket_timeout = 600
+
+If all is correct, executing ``s3cmd ls s3://`` should list your object store contents.
