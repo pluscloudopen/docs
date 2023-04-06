@@ -31,3 +31,88 @@ then click on "**Upload File**". Objects can be downloaded with the "**Download*
 "**View Details**" gives you some information about that object (like size, content type, etc.). With "**Edit**" you can change the content of that object. But there is no in place editing for object storage - the new content is uploaded with the old object name.
 
 Furthermore you can copy an object into another container/bucket by choosing "**Copy**". "**Delete**" obviously deletes the object.
+
+You can create a folder in your container/bucket (instead of uploading an object) by clicking on "+Folder". Objects can be uploaded, copied, edited and deleted in these subfolders exactly as in other containers/buckets. But beware: Those subfolders are not like subfolders in a filesystem. The folder structure is only simulated by adding "/" to the folder name.
+
+### Using CLI clients
+
+There are serveral options to manage your object storage from the command line. As mentioned above, our object storage is compatible to Openstacks Swift and Amazons S3 protocol. Thus you should be able to use command line tools, which support the one or the other.
+
+Obviously the OpenStack client itself supports managing containers to a certain extend. If you have your OpenStack client configured correctly, you can use the ``openstack container`` commands to manage your object store containers/buckets:
+
+    /configuration # openstack container list
+    +--------+
+    | Name   |
+    +--------+
+    | first  |
+    | foobar |
+    +--------+
+    /configuration # openstack container show first
+    +----------------+---------------------------------------+
+    | Field          | Value                                 |
+    +----------------+---------------------------------------+
+    | account        | AUTH_d474d55f24a3a97e92cc39b7dd469c14 |
+    | bytes_used     | 0                                     |
+    | container      | first                                 |
+    | object_count   | 0                                     |
+    | read_acl       | .r:*,.rlistings                       |
+    | storage_policy | default-placement                     |
+    +----------------+---------------------------------------+
+
+As the ``openstack container`` command seems not to allow uploads (yet?), you have to use the swift client to upload objects to your object storage:
+
+    /configuration # swift upload --help
+    Usage: swift upload [--changed] [--skip-identical] [--segment-size <size>]
+                        [--segment-container <container>] [--leave-segments]
+                        [--object-threads <thread>] [--segment-threads <threads>]
+                        [--meta <name:value>] [--header <header>] [--use-slo]
+                        [--ignore-checksum] [--object-name <object-name>]
+                        <container> <file_or_directory> [<file_or_directory>] [...]
+    
+    Uploads specified files and directories to the given container.
+    
+    Positional arguments:
+      <container>           Name of container to upload to.
+      <file_or_directory>   Name of file or directory to upload. Specify multiple
+                            times for multiple uploads. If "-" is specified, reads
+                            content from standard input (--object-name is required
+                            in this case).
+    
+    Optional arguments:
+      -c, --changed         Only upload files that have changed since the last
+                            upload.
+      --skip-identical      Skip uploading files that are identical on both sides.
+      -S, --segment-size <size>
+                            Upload files in segments no larger than <size> (in
+                            Bytes) and then create a "manifest" file that will
+                            download all the segments as if it were the original
+                            file.
+      --segment-container <container>
+                            Upload the segments into the specified container. If
+                            not specified, the segments will be uploaded to a
+                            <container>_segments container to not pollute the
+                            main <container> listings.
+      --leave-segments      Indicates that you want the older segments of manifest
+                            objects left alone (in the case of overwrites).
+      --object-threads <threads>
+                            Number of threads to use for uploading full objects.
+                            Default is 10.
+      --segment-threads <threads>
+                            Number of threads to use for uploading object segments.
+                            Default is 10.
+      -m, --meta <name:value>
+                            Sets a meta data item. This option may be repeated.
+                            Example: -m Color:Blue -m Size:Large
+      -H, --header <header:value>
+                            Adds a customized request header. This option may be
+                            repeated. Example: -H "content-type:text/plain"
+                            -H "Content-Length: 4000".
+      --use-slo             When used in conjunction with --segment-size it will
+                            create a Static Large Object instead of the default
+                            Dynamic Large Object.
+      --object-name <object-name>
+                            Upload file and name object to <object-name> or upload
+                            dir and use <object-name> as object prefix instead of
+                            folder name.
+      --ignore-checksum     Turn off checksum validation for uploads.
+
