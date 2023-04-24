@@ -46,5 +46,17 @@ That opens a pop-up, which will guide you through all required steps creating an
 
 ![screenshot of the launch instance pop-up](./2023-04-24_13-24.png)
 
-Asterisks (*) mark required information
+Asterisks (*) mark required information, thus you need to give your fist instance a name. Enter it in the "**Instance Name**" field and click "Next".
+
+You have to choose the "**Source**" image of your new instance from the list of images.
+
+![screenshot of the source menu](./2023-04-24_16-19.png)
+
+Choose the "Ubuntu 22.04" image by clicking on the little "up" arrow at the end of the line. As soon as you have clicked, the image is now listed under "Allocated"
+
+![screenshot of the source menu with allocated Ubuntu image](./2023-04-24_16-22.png)
+
+Scroll down to the end of the list and click "Next" again.
+
+![screenshot of the bottom of the source menu](./2023-04-24_16-24.png)
 
