@@ -6,7 +6,7 @@ description: >
   Click your first VM in Horizon and log in
 ---
 
-## Your credentials come via E-Mail
+## Your get your credentials via E-Mail
 
 After ordering a cloud in one of our regions, you'll receive an e-mail similar to the following:
 
@@ -34,3 +34,12 @@ Enter the "USERNAME" value from the e-mail in the "**User Name**" field, use the
 Click on "Sign In" and you should be logged in to the web gui of pluscloud open.
 
 ![screenshot of the horizon start page](2023-04-20_18-36.png)
+
+## Your first Instance
+
+In order to start you first instance on pluscloud open you should click on "**Instances**". That should bring you to the "Instances" menu
+
+![screenshot of the empty instances menu](2023-04-24_10-36.png)
+
+As you can see, there are currently no instances deployed.
+
