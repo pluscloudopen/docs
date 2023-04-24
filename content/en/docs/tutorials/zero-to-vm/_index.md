@@ -41,5 +41,10 @@ In order to start you first instance on pluscloud open you should click on "**In
 
 ![screenshot of the empty instances menu](2023-04-24_10-36.png)
 
-As you can see, there are currently no instances deployed.
+As you can see, there are currently no instances deployed. To start your first instance, click on "**Launch Instance**". 
+That opens a pop-up, which will guide you through all required steps creating and starting a new instance.
+
+![screenshot of the launch instance pop-up](./2023-04-24_13-24.png)
+
+Asterisks (*) mark required information
 
