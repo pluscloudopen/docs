@@ -13,7 +13,7 @@ This pricing table provides an overview of the server plans, load balancers, and
 * Storage: €0.09 per GB per month
 * Load balancer: €0.068 per hour
 
-To calculate the monthly cost for a server plan, multiply the hourly cost by the number of hours in a month (assuming 720 hours per month). For example, for the SCS-1V:0.5 plan with 1 VCPU and 0.5 GB RAM, the hourly cost would be (1 * €0.0205) + (0.5 * €0.007) = €0.024, and the monthly cost would be €0.024 * 720 = €17.28.
+To calculate the monthly cost for a server plan, multiply the hourly cost by the number of hours in a month (assuming 720 hours per month). For example, for the SCS-1V:0.5 plan with 1 VCPU and 0.5 GB RAM, the hourly cost would be ```(1*€0.0205) + (0.5*€0.007) = €0.024```, and the monthly cost would be ```€0.024 * 720 = €17.28```.
 
 The pricing information was last updated in April 2023 and is subject to change.
 
@@ -44,7 +44,6 @@ The pricing information was last updated in April 2023 and is subject to change.
 Please note that the prices shown in the table are for plans with 0 Disk storage.
 {{% /alert %}}
 
-
 ## Storage
 
 | Name          | units | monthly |
@@ -55,7 +54,6 @@ Please note that the prices shown in the table are for plans with 0 Disk storage
 Object Storage on PCO is based on Ceph RadosGW and is not subject to additional charges. The quota is limited to 20 GB / 20,000 objects.
 {{% /alert %}}
 
-
 ## Network
 
 | Name                | hourly     | monthly    |
@@ -65,5 +63,3 @@ Object Storage on PCO is based on Ceph RadosGW and is not subject to additional 
 {{% alert title="Traffic Fair Use Policy" %}}
 Incoming and Outgoing Standard network usage is not subject to additional charges.
 {{% /alert %}}
-
-
