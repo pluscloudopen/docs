@@ -27,8 +27,19 @@ pluscloud open offers local storage as an option for storing data on instances. 
 
 However, local storage has some caveats. It is limited to the size of the instance and cannot be resized. If the instance is deleted or crashes, the data stored in the local storage is lost. Therefore, it is recommended to use local storage only for non-persistent data or temporary workloads that do not require data to be stored for a long period. For persistent data, it is recommended to use distributed block storage or object storage. Additionally, using local storage can limit the ability to scale horizontally as the data stored on local storage is not available on other instances.
 
-## Object Storage on pco
+## Object Storage on PCO
+
+Object Storage on PCO is a versatile storage solution built to accommodate moderate data and file storage needs. Based on the Ceph RadosGW technology, it is designed for seamless integration with cloud-native workflows and Infrastructure as Code (IaC) processes within the pluscloud open environment.
+
+Key features of Object Storage on PCO include:
+
+- OpenStack Swift and Amazon S3 compatibility for enhanced interoperability
+- Accessible via both the GUI (Horizon) and CLI for ease of use
+- Integrated into the OpenStack rights management system for secure access control
+- Quota of 20 GB and 20,000 objects to cater to moderate storage requirements
+
+With Object Storage on PCO, customers can enjoy a hassle-free storage experience while benefiting from the platform's robust capabilities and seamless integration.
 
 {{% alert title="Note" color="info" %}}
-"Object Storage on pco" is designed for moderate amounts of data and file storage needs. However, for larger-scale data storage requirements, PlusServer provides a dedicated solution called "S3 Storage". This solution offers highly scalable, cost-effective object storage with maximum availability, as well as optional georedundancy features. With S3 Storage, users can easily store and retrieve large amounts of data, ensuring data availability and accessibility in case of any infrastructure failure or other disruptions.
+Object Storage on PCO is designed for moderate amounts of data and file storage needs. However, for larger-scale data storage requirements, PlusServer provides a dedicated solution called "S3 Storage". This solution offers highly scalable, cost-effective object storage with maximum availability, as well as optional georedundancy features. With S3 Storage, users can easily store and retrieve large amounts of data, ensuring data availability and accessibility in case of any infrastructure failure or other disruptions.
 {{% /alert %}}
