@@ -59,6 +59,7 @@ Object Storage on PCO is based on Ceph RadosGW and is not subject to additional 
 | Name                | hourly     | monthly    |
 | --------------------| -----------| -----------|
 | Cloud Load Balancer | €0.068     | €48.96     |
+| Public Floating IP  | €1.00      | €1.00      |
 
 {{% alert title="Traffic Fair Use Policy" %}}
 Incoming and Outgoing Standard network usage is not subject to additional charges.
