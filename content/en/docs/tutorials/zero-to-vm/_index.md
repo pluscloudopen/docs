@@ -6,7 +6,7 @@ description: >
   Click your first VM in Horizon and log in
 ---
 
-## Your get your credentials via E-Mail
+## You get your credentials via E-Mail
 
 After ordering a cloud in one of our regions, you'll receive an e-mail similar to the following:
 
@@ -31,7 +31,7 @@ Now you can make use of the information from the e-mail. You can acquire your "*
 
 Enter the "USERNAME" value from the e-mail in the "**User Name**" field, use the password from the "PWX_LINK" for the "**Password**" field and try the "DOMAIN_NAME" for the "**Domain**" field.
 
-Click on "Sign In" and you should be logged in to the web gui of pluscloud open.
+Click on "**Sign In**" and you should be logged in to the web gui of pluscloud open.
 
 ![screenshot of the horizon start page](2023-04-20_18-36.png)
 
@@ -52,7 +52,7 @@ You have to choose the "**Source**" image of your new instance from the list of 
 
 ![screenshot of the source menu](./2023-04-24_16-19.png)
 
-Choose the "Ubuntu 22.04" image by clicking on the little "up" arrow at the end of the line. As soon as you have clicked, the image is now listed under "Allocated"
+Choose the "**Ubuntu 22.04**" image by clicking on the little "up" arrow at the end of the line. As soon as you have clicked, the image is now listed under "Allocated"
 
 ![screenshot of the source menu with allocated Ubuntu image](./2023-04-24_16-22.png)
 
@@ -60,7 +60,7 @@ Scroll down to the end of the list and click "Next" again.
 
 ![screenshot of the bottom of the source menu](./2023-04-24_16-24.png)
 
-You are now in the "**Flavor**" menu where you have to choose flavor to size your new instance. Choose the "SCS-1V:1:20" flavor by clicking on the little "up" arrow at the end of the line.
+You are now in the "**Flavor**" menu where you have to choose a flavor to size your new instance. Choose the "**SCS-1V:1:20**" flavor by clicking on the little "up" arrow at the end of the line.
 
 ![screenshot of the flavor menu](./2023-04-24_16-28.png)
 
