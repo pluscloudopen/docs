@@ -49,4 +49,4 @@ The following table lists the regions and AZs offered by PlusServer:
 
 ### Locations and data centers
 
-![PlusServer Locations and data centers](PLS_Standortkarte-2022_en.png)
+![PlusServer Locations and data centers](PCO-2023_en.png)
