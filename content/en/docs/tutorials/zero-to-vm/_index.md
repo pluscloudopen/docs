@@ -41,7 +41,7 @@ In order to start you first instance on pluscloud open you should click on "**In
 
 ![screenshot of the empty instances menu](2023-04-24_10-36.png)
 
-As you can see, there are currently no instances deployed. To start your first instance, click on "**Launch Instance**". 
+As you can see, there are currently no instances deployed. To start your first instance, click on "**Launch Instance**" at the upper right corner. 
 That opens a pop-up, which will guide you through all required steps creating and starting a new instance.
 
 ![screenshot of the launch instance pop-up](./2023-04-24_13-24.png)
@@ -84,7 +84,7 @@ Name your new key by entering a name in "**Key Pair Name**" and choose "SSH Key"
 
 ![screenshot of the generated key](./2023-04-24_16-51.png)
 
-A new field appears, which shows the "**Private Key**" of the newly generated key pair. Click on "**Copy Private Key to Clipboard**", then open your favourite text editor, paste the private key from the clipboard into it and save it to your local disk. On a Linux system you probably would open the Vi editor, paste the key into it and safe the new file in your home directory. On a Windows system you would probably use Ultraedit and safe the new file to you home directory, too.
+A new field appears, which shows the "**Private Key**" of the newly generated key pair. Click on "**Copy Private Key to Clipboard**", then open your favourite text editor, paste the private key from the clipboard into it and save it to your local disk. On a Linux system you probably would open the Vi editor, paste the key into it and save the new file in your home directory. On a Windows system you would probably use Ultraedit and save the new file to you home directory, too.
 
 After saving the private key to your disk, click on "Done". The new key should now be listed under "Allocated"
 
