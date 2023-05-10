@@ -6,7 +6,7 @@ description: >
   Click your first VM in Horizon and log in
 ---
 
-## Your get your credentials via E-Mail
+## You get your credentials via E-Mail
 
 After ordering a cloud in one of our regions, you'll receive an e-mail similar to the following:
 
@@ -31,7 +31,7 @@ Now you can make use of the information from the e-mail. You can acquire your "*
 
 Enter the "USERNAME" value from the e-mail in the "**User Name**" field, use the password from the "PWX_LINK" for the "**Password**" field and try the "DOMAIN_NAME" for the "**Domain**" field.
 
-Click on "Sign In" and you should be logged in to the web gui of pluscloud open.
+Click on "**Sign In**" and you should be logged in to the web gui of pluscloud open.
 
 ![screenshot of the horizon start page](2023-04-20_18-36.png)
 
@@ -41,7 +41,7 @@ In order to start you first instance on pluscloud open you should click on "**In
 
 ![screenshot of the empty instances menu](2023-04-24_10-36.png)
 
-As you can see, there are currently no instances deployed. To start your first instance, click on "**Launch Instance**". 
+As you can see, there are currently no instances deployed. To start your first instance, click on "**Launch Instance**" at the upper right corner. 
 That opens a pop-up, which will guide you through all required steps creating and starting a new instance.
 
 ![screenshot of the launch instance pop-up](./2023-04-24_13-24.png)
@@ -52,7 +52,7 @@ You have to choose the "**Source**" image of your new instance from the list of 
 
 ![screenshot of the source menu](./2023-04-24_16-19.png)
 
-Choose the "Ubuntu 22.04" image by clicking on the little "up" arrow at the end of the line. As soon as you have clicked, the image is now listed under "Allocated"
+Choose the "**Ubuntu 22.04**" image by clicking on the little "up" arrow at the end of the line. As soon as you have clicked, the image is now listed under "Allocated"
 
 ![screenshot of the source menu with allocated Ubuntu image](./2023-04-24_16-22.png)
 
@@ -60,7 +60,7 @@ Scroll down to the end of the list and click "Next" again.
 
 ![screenshot of the bottom of the source menu](./2023-04-24_16-24.png)
 
-You are now in the "**Flavor**" menu where you have to choose flavor to size your new instance. Choose the "SCS-1V:1:20" flavor by clicking on the little "up" arrow at the end of the line.
+You are now in the "**Flavor**" menu where you have to choose a flavor to size your new instance. Choose the "**SCS-1V:1:20**" flavor by clicking on the little "up" arrow at the end of the line.
 
 ![screenshot of the flavor menu](./2023-04-24_16-28.png)
 
@@ -84,7 +84,7 @@ Name your new key by entering a name in "**Key Pair Name**" and choose "SSH Key"
 
 ![screenshot of the generated key](./2023-04-24_16-51.png)
 
-A new field appears, which shows the "**Private Key**" of the newly generated key pair. Click on "**Copy Private Key to Clipboard**", then open your favourite text editor, paste the private key from the clipboard into it and save it to your local disk. On a Linux system you probably would open the Vi editor, paste the key into it and safe the new file in your home directory. On a Windows system you would probably use Ultraedit and safe the new file to you home directory, too.
+A new field appears, which shows the "**Private Key**" of the newly generated key pair. Click on "**Copy Private Key to Clipboard**", then open your favourite text editor, paste the private key from the clipboard into it and save it to your local disk. On a Linux system you probably would open the Vi editor, paste the key into it and save the new file in your home directory. On a Windows system you would probably use Ultraedit and save the new file to you home directory, too.
 
 After saving the private key to your disk, click on "Done". The new key should now be listed under "Allocated"
 
