@@ -115,7 +115,7 @@ disable = false
 privacyEnhanced = false
 
 [params]
-copyright = "PlusServer GmbH"
+copyright = "plusserver GmbH"
 privacy_policy = "https://www.plusserver.com/en/privacy-policy"
 
 # First one is picked as the Twitter card image if not set on page.
@@ -212,12 +212,12 @@ desc = "Development takes place here!"
 name = "Contact"
 url = "https://www.plusserver.com/en/about-us/plusserver-contact"
 icon = "fa-solid fa-phone"
-desc = "PlusServer GmbH Contact"
+desc = "plusserver GmbH Contact"
 [[params.links.developer]]
 name = "Company Information"
 url = "https://www.plusserver.com/en/company-information"
 icon = "fa-solid fa-gavel"
-desc = "PlusServer GmbH Legal notice"
+desc = "plusserver GmbH Legal notice"
 
 # hugo module configuration
 

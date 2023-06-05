@@ -41,5 +41,5 @@ Key features of Object Storage on PCO include:
 With Object Storage on PCO, customers can enjoy a hassle-free storage experience while benefiting from the platform's robust capabilities and seamless integration.
 
 {{% alert title="Note" color="info" %}}
-Object Storage on PCO is designed for moderate amounts of data and file storage needs. However, for larger-scale data storage requirements, PlusServer provides a dedicated solution called "S3 Storage". This solution offers highly scalable, cost-effective object storage with maximum availability, as well as optional georedundancy features. With S3 Storage, users can easily store and retrieve large amounts of data, ensuring data availability and accessibility in case of any infrastructure failure or other disruptions.
+Object Storage on PCO is designed for moderate amounts of data and file storage needs. However, for larger-scale data storage requirements, plusserver provides a dedicated solution called "S3 Storage". This solution offers highly scalable, cost-effective object storage with maximum availability, as well as optional georedundancy features. With S3 Storage, users can easily store and retrieve large amounts of data, ensuring data availability and accessibility in case of any infrastructure failure or other disruptions.
 {{% /alert %}}
