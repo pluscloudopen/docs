@@ -1,6 +1,6 @@
 # pluscloud open: technical documentation repo
 
-[pluscloud open](https://www.plusserver.com/en/products/pluscloud-open) is an open-source cloud service by [plusserver](https://plusserver.com). The technical documentation is published [here](https://docs.pco.get-cloud.io).
+[pluscloud open](https://www.plusserver.com/en/products/pluscloud-open) is an open-source cloud service by [plusserver GmbH](https://plusserver.com). The technical documentation is published [here](https://docs.pco.get-cloud.io).
 
 
 ## Contributions

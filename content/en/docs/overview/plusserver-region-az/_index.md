@@ -1,12 +1,12 @@
 ---
-title: "PlusServer Regions and Availability Zones"
+title: "plusserver Regions and Availability Zones"
 weight: 10
 date: 2023-03-10
 ---
 
 # Introduction
 
-PlusServer offers multiple regions and availability zones (AZs) to provide customers with high availability and disaster recovery options. Each AZ consists of one or more data centers that are designed to be independent of one another, providing redundancy in case of failures or disasters. Customers can choose to deploy their resources in one or multiple AZs for high availability and disaster recovery purposes.
+plusserver offers multiple regions and availability zones (AZs) to provide customers with high availability and disaster recovery options. Each AZ consists of one or more data centers that are designed to be independent of one another, providing redundancy in case of failures or disasters. Customers can choose to deploy their resources in one or multiple AZs for high availability and disaster recovery purposes.
 
 ## What is a Region?
 
@@ -36,9 +36,9 @@ An availability zone (AZ) is a location within a region consisting of one or mor
 * DE-NORTH-1
 * DE-WEST-2
 
-## PlusServer Region and Availability Zone List
+## plusserver Region and Availability Zone List
 
-The following table lists the regions and AZs offered by PlusServer:
+The following table lists the regions and AZs offered by plusserver:
 
 | Region   | Availability Zone | Location            |
 |----------|-------------------|---------------------|
@@ -49,4 +49,4 @@ The following table lists the regions and AZs offered by PlusServer:
 
 ### Locations and data centers
 
-![PlusServer Locations and data centers](PCO-2023_en.png)
+![plusserver Locations and data centers](PCO-2023_en.png)
