@@ -16,6 +16,8 @@ Each pluscloud open environment is designed as a "shared nothing" infrastructure
 |-------------|----------|-------------------|
 | prod1       | DE-WEST  | DE-WEST-1         |
 | prod2       | DE-NORTH | DE-NORTH-1        |
+| prod3       | DE-NORTH | DE-NORTH-2        |
+| prod4       | DE-WEST  | DE-WEST-2         |
 | scs1        | DE-WEST  | DE-WEST-2         |
 
 {{% alert title="Note" color="info" %}}
@@ -27,7 +29,9 @@ scs1 is a development environment solely provided in the [Sovereign Cloud Stack]
 | Environment | horizon/ui                            | keystone                                    |
 |-------------|---------------------------------------|---------------------------------------------|
 | prod1       | <https://prod1.api.pco.get-cloud.io>  | <https://prod1.api.pco.get-cloud.io:5000>   |
-| prod2       | <https://prod1.api.pco.get-cloud.io>  | <https://prod2.api.pco.get-cloud.io:5000>   |
+| prod2       | <https://prod2.api.pco.get-cloud.io>  | <https://prod2.api.pco.get-cloud.io:5000>   |
+| prod3       | <https://prod3.api.pco.get-cloud.io>  | <https://prod3.api.pco.get-cloud.io:5000>   |
+| prod4       | <https://prod4.api.pco.get-cloud.io>  | <https://prod4.api.pco.get-cloud.io:5000>   |
 | scs1        | <https://ui.gx-scs.sovereignit.cloud> | <https://api.gx-scs.sovereignit.cloud:5000> |
 
 ## Access
