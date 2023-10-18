@@ -199,7 +199,7 @@ enable = true
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
 name = "pluscloud open"
-url = "https://www.plusserver.com/en/products/pluscloud-open"
+url = "https://www.plusserver.com/en/product/pluscloud-open"
 icon = "fa-solid fa-house"
 desc = "pluscloud open product page"
 [[params.links.user]]
@@ -210,12 +210,12 @@ desc = "Development takes place here!"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 name = "Contact"
-url = "https://www.plusserver.com/en/about-us/plusserver-contact"
+url = "https://www.plusserver.com/en/support/"
 icon = "fa-solid fa-phone"
 desc = "plusserver GmbH Contact"
 [[params.links.developer]]
 name = "Company Information"
-url = "https://www.plusserver.com/en/company-information"
+url = "https://www.plusserver.com/en/company/about-us/"
 icon = "fa-solid fa-gavel"
 desc = "plusserver GmbH Legal notice"
 
