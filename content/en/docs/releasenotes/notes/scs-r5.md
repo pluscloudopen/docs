@@ -15,14 +15,14 @@ description: >
 
 ## Important Information:
 
-With this update we have to rebuild the RabbitMQ Messaging Service and therefore it is necessary to set the API and GUI into a downtime for about a maximun of three hours. Into that window it will not be possible to manage running workload or spawn new workload.
-
+With this update we have to rebuild the RabbitMQ Messaging Service and therefore it is necessary to set the API and GUI into a downtime for about three hours. Into that window it will not be possible to manage running workload or spawn new workload.
 Running workload will not be affected!
-New features and requirements overview:
-horizon
 
-Add support to portforwardings in the Network Floating IPs dashboard:
+## New features and requirements overview:
 
+### horizon
+
+Add support to portforwardings in the Network Floating IPs dashboard. Find it in the menu under 'Network -> Floating IPs" in the dropdown menu of unassigned floating ips -> 'Configure floating IP port forwarding rules'
 
 ### nova
 
