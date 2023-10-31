@@ -7,6 +7,6 @@ description: >
 
 ---
 
-Here are the current release notes for the pluscloudopen releases.
+Here are the current release notes for the pluscloud open releases.
 
 
