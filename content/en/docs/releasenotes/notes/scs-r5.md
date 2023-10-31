@@ -43,19 +43,19 @@ more details
 
 ### detailed changelogs for every component which includes also bugfixes etc. can be found here:
 
-OpenStack 2023.1 press announcement: https://www.openstack.org/software/antelope/
+- OpenStack 2023.1 press announcement: https://www.openstack.org/software/antelope/
 
 OpenStack 2023.1 release notes:
-    Barbican: https://docs.openstack.org/releasenotes/barbican/2023.1.html
-    Cinder: https://docs.openstack.org/releasenotes/cinder/2023.1.html
-    Designate: https://docs.openstack.org/releasenotes/designate/2023.1.html
-    Glance: https://docs.openstack.org/releasenotes/glance/2023.1.html
-    Heat: https://docs.openstack.org/releasenotes/heat/2023.1.html
-    Horizon: https://docs.openstack.org/releasenotes/horizon/2023.1.html
-    Keystone: https://docs.openstack.org/releasenotes/keystone/2023.1.html
-    Neutron: https://docs.openstack.org/releasenotes/neutron/2023.1.html
-    Nova: https://docs.openstack.org/releasenotes/nova/2023.1.html
-    Octavia: https://docs.openstack.org/releasenotes/octavia/2023.1.html
-    Overview: https://releases.openstack.org/antelope/index.html
-    Placement: https://docs.openstack.org/releasenotes/placement/2023.1.html
+- Barbican: https://docs.openstack.org/releasenotes/barbican/2023.1.html
+- Cinder: https://docs.openstack.org/releasenotes/cinder/2023.1.html
+- Designate: https://docs.openstack.org/releasenotes/designate/2023.1.html
+- Glance: https://docs.openstack.org/releasenotes/glance/2023.1.html
+- Heat: https://docs.openstack.org/releasenotes/heat/2023.1.html
+- Horizon: https://docs.openstack.org/releasenotes/horizon/2023.1.html
+- Keystone: https://docs.openstack.org/releasenotes/keystone/2023.1.html
+- Neutron: https://docs.openstack.org/releasenotes/neutron/2023.1.html
+- Nova: https://docs.openstack.org/releasenotes/nova/2023.1.html
+- Octavia: https://docs.openstack.org/releasenotes/octavia/2023.1.html
+- Placement: https://docs.openstack.org/releasenotes/placement/2023.1.html
+- Overview: https://releases.openstack.org/antelope/index.html
  
