@@ -15,3 +15,5 @@ In [Overview](https://docs.pco.get-cloud.io/docs/overview/) you will have quick 
 If you just want to get a feel for pluscloud open, our tutorial [From zero to first login into a VM](https://docs.pco.get-cloud.io/docs/tutorials/zero-to-vm/) might be the right thing to follow. You will find even more step-by-step guides under [Tutorials](https://docs.pco.get-cloud.io/docs/tutorials/).
 
 To get a deeper understanding of the various services pluscloud open has to offer, you should follow [Working with pluscloud open](https://docs.pco.get-cloud.io/docs/working-with-pco/).
+
+Release Notes [Release Notes](https://docs.pco.get-cloud.io/docs/releasenotes/).
