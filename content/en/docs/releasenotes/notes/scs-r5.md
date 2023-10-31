@@ -7,7 +7,7 @@ description: >
 
 ---
 
-## General notes:
+## General notes for the SCS R5 Release on pluscloud open:
 
 - OpenStack 2023.1 (Antelope) is the OpenStack release that is used.
 - Ceph Quincy is the Ceph release that is used (no change to SCS R4)
