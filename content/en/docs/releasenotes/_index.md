@@ -1,7 +1,7 @@
 ---
 title: "Release Notes"
 linkTitle: "Release Notes"
-weight: 4
+weight: 60
 date: 2023-10-31
 description: >
 
